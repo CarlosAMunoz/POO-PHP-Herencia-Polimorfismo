@@ -1,11 +1,12 @@
 <?php 
 
-class Persona{
-    private $nombre;
-    private $apellido;
-    private $edad;
-    private $genero;
-    private $carrera; 
+//Clase aabstracta | NO se puede instanciar. 
+abstract class Persona{
+    protected $nombre;
+    protected $apellido;
+    protected $edad;
+    protected $genero;
+    protected $carrera; 
 
 
     public function __construct($nombre, $apellido, $edad, $genero, $carrera){
@@ -117,9 +118,14 @@ class Persona{
     }
 
 
-    public function matricular(){}
-    public function reprobar(){}
-    public function aprobar(){}
+    public function matricular(){
+        echo "Se ha matriculado la persona";
+    }
+
+    //Métodos abstractos | NO llevarán ninguna instrucción. 
+    //Se deben de sobreescribir en los hijos
+    public abstract function reprobar();
+    public abstract function aprobar();
 }
 
 ?>

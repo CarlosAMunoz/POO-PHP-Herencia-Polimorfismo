@@ -1,16 +1,25 @@
 <?php
-class Profesor{
+include_once('class-persona.php');
+class Profesor extends Persona{
     private $numeroEmpleado;
     private $sueldo; 
     private $horario; 
 
-    public function __construct($numeroEmpleado, $sueldo, $horario){
+    public function __construct($nombre, $apellido, $edad, $genero, $carrera, $numeroEmpleado, $sueldo, $horario){
+       
+        parent::__construct($nombre, $apellido, $edad, $genero, $carrera);
         $this->numeroEmpleado = $numeroEmpleado;
         $this->sueldo = $sueldo; 
         $this->horario = $horario; 
     }
 
-    
+    public function reprobar(){
+        echo "Reprobar Profesor";
+    }
+    public function aprobar(){
+        echo "Aprobar Profesor";
+    }
+
 
 
     /**
